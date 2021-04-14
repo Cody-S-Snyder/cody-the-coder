@@ -1,26 +1,32 @@
-import './App.scss';
+import './styles/main.scss';
+import Navbar from "./components/navbar/Navbar";
+import React from "react";
 
-function App() {
-  return (
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div className="collapse navbar-collapse">
-          <ul className="navbar-nav mr-auto">
-            <li className="nav-item active">
-              <a className="nav-link" href="#">Home <span className="sr-only">(current)</span></a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#">Link</a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link disabled" href="#">Disabled</a>
-            </li>
-          </ul>
-          <form className="form-inline my-2 my-md-0">
-            <input className="form-control" type="text" placeholder="Search"/>
-          </form>
-        </div>
-      </nav>
-  );
+class App extends React.Component<Props, State> {
+    state: State = {
+        activeContentId: 1
+    }
+
+    setActiveContentId = (activeContentId: number) => this.setState({activeContentId});
+
+    render() {
+        const {setActiveContentId} = this;
+        const {activeContentId} = this.state;
+
+        return (
+            <div className="container">
+                <Navbar
+                    activeContentId={activeContentId}
+                    setActiveContentId={setActiveContentId}
+                />
+            </div>
+        );
+    }
 }
+
+type Props = {};
+type State = {
+    activeContentId: number;
+};
 
 export default App;

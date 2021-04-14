@@ -1,0 +1,36 @@
+@import '~bootstrap/scss/bootstrap';
+
+header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: rgba(0, 0, 0, 0.8);
+
+  .nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      display: inline-block;
+      margin: 0 0.25rem;
+
+      .btn {
+        color: white;
+        transition-duration: 250ms;
+      }
+      .btn.active {
+        color: $danger;
+        background-color: rgba(0, 0, 0, 0.3);
+      }
+    }
+    .btn:not(.active):hover {
+      background-color: rgba(0, 0, 0, 0.15);
+    }
+  }
+}

@@ -1,10 +1,13 @@
 {
-  "name": "big-money-web-store",
+  "name": "cody-the-coder",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "@babel/core": "7.12.3",
     "@chec/commerce.js": "^2.3.2",
+    "@fortawesome/fontawesome-svg-core": "^1.2.35",
+    "@fortawesome/free-solid-svg-icons": "^5.15.3",
+    "@fortawesome/react-fontawesome": "^0.1.14",
     "@pmmmwh/react-refresh-webpack-plugin": "0.4.3",
     "@stripe/react-stripe-js": "^1.4.0",
     "@stripe/stripe-js": "^1.13.1",
@@ -115,7 +118,7 @@
       "<rootDir>/src/**/*.{spec,test}.{js,jsx,ts,tsx}"
     ],
     "testEnvironment": "jsdom",
-    "testRunner": "/Users/codysnyder/Desktop/big-money-web-store/node_modules/jest-circus/runner.js",
+    "testRunner": "/Users/codysnyder/Desktop/cody-the-coder/node_modules/jest-circus/runner.js",
     "transform": {
       "^.+\\.(js|jsx|mjs|cjs|ts|tsx)$": "<rootDir>/config/jest/babelTransform.js",
       "^.+\\.css$": "<rootDir>/config/jest/cssTransform.js",
