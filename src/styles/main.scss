@@ -1,2 +1,26 @@
-@import 'bootstrap/dist/css/bootstrap.min.css';
+@import '~bootstrap/scss/bootstrap';
 @import '../components/navbar/_styles.scss';
+@import '../components/sidebar/_styles.scss';
+@import '../components/content/_styles.scss';
+@import './_variables';
+
+root {
+  font-size: 16px;
+}
+
+body::-webkit-scrollbar {
+  width: 1rem;
+}
+body::-webkit-scrollbar-track {
+  background-color: black;
+}
+body::-webkit-scrollbar-thumb {
+  background-color: $accent-color;
+}
+
+.bg-cody-primary {
+  background-color: $accent-color;
+}
+.cody-primary-text {
+  color: $accent-color;
+}

@@ -1,36 +1,81 @@
 @import '~bootstrap/scss/bootstrap';
+@import '../../styles/_variables';
 
-header {
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-  background-color: rgba(0, 0, 0, 0.8);
+.cody-container {
+  header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: $cody-header-offset;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 1rem 2rem 1rem 1rem;
+    background-color: $bg-navbar;
+    z-index: 20;
 
-  .nav-links {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+    $header-button-width: calc(19px + 3.5rem);
 
-    li {
-      display: inline-block;
-      margin: 0 0.25rem;
+    .btn-sidebar-toggle {
+      position: absolute;
+      color: $accent-color;
+      margin: 0;
+      padding-left: 1.75rem;
+      padding-right: 1.75rem;
+      height: 100%;
+      width: $header-button-width;
+      left: 0;
+      border-radius: 0;
+    }
+    .btn-sidebar-toggle.is-toggled,
+    .btn-sidebar-toggle:hover {
+      background-color: lighten($bg-navbar, 10%);
+    }
 
-      .btn {
-        color: white;
-        transition-duration: 250ms;
+    h3.header-title {
+      color: white;
+      margin: 0;
+      font-weight: normal;
+      padding-left: $header-button-width;
+    }
+
+    .nav-links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      li {
+        display: inline-block;
+        margin: 0 0.25rem;
+
+        .btn {
+          color: white;
+          transition-duration: 250ms;
+        }
+        .btn.active {
+          color: $accent-color;
+          background-color: rgba(0, 0, 0, 0.15);
+        }
       }
-      .btn.active {
-        color: $danger;
-        background-color: rgba(0, 0, 0, 0.3);
+      .btn:not(.active):hover {
+        background-color: rgba(0, 0, 0, 0.15);
       }
     }
-    .btn:not(.active):hover {
-      background-color: rgba(0, 0, 0, 0.15);
+
+    @include media-breakpoint-down(sm) {
+      .nav-links {
+        padding-left: $header-button-width;
+      }
+    }
+
+    .btn.btn-primary {
+      background-color: $accent-color;
+      border: 1px solid $accent-color;
+    }
+    .btn.btn-primary:hover {
+      background-color: darken($accent-color, 10%);
+      border: 1px solid darken($accent-color, 10%);
     }
   }
 }

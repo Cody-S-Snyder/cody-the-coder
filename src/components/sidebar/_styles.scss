@@ -1,0 +1,30 @@
+@import '~bootstrap/scss/bootstrap';
+@import '../../styles/_variables';
+
+.cody-sidebar {
+  position: fixed;
+  top: $cody-header-offset;
+  left: -$cody-sidebar-offset;
+  height: calc(100% - #{$cody-header-offset});
+  background-color: $bg-sidebar;
+  width: $cody-sidebar-offset;
+  transition-duration: $cody-duration-medium;
+  z-index: 50;
+
+  &.sidebar-open {
+    left: 0;
+  }
+
+  .sidebar-button {
+    width: 100%;
+    padding: 0.75rem 1.5rem;
+    border-bottom: 1px solid $bg-sidebar-border;
+    color: $bg-sidebar-text;
+    font-weight: lighter;
+  }
+
+  .sidebar-button:hover {
+    background-color: $bg-sidebar-hover;
+    cursor: pointer;
+  }
+}

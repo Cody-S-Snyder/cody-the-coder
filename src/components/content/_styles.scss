@@ -1,0 +1,28 @@
+@import '~bootstrap/scss/bootstrap';
+@import '../../styles/_variables';
+
+.cody-container {
+  margin-top: $cody-header-offset;
+  transition-duration: 500ms;
+  background-color: $bg-content;
+
+  article {
+    min-height: 2000px;
+  }
+}
+.cody-container::after {
+  content: " ";
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  background-color: rgba(0,0,0,0);
+  position: fixed;
+  display: block;
+  top: 0;
+  bottom: 0;
+  transition-duration: 500ms;
+}
+.cody-container.has-sidebar::after {
+  z-index: 19;
+  background-color: rgba(0,0,0,0.3);
+}
